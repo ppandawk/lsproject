@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+
+html{
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+html {
+  font-family: $font-family;
+  font-size: $font-normal;
+  color: $color-normal;
+  line-height: 1.3em;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-y: auto \9;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+li,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  border: none;
+}
+
+.main-container{
+  margin: auto;
+  width: 1280px;
+  &.full{
+    margin: 0;
+    width: 100%;
+  }
+  &.header,&.footer{
+    background: #f5f5f5;
+  }
+}
+
+.content {
+  min-height: 100%;
+  margin: 0 0 -50px;
+}
+
+/* column style */
+.box-overflow {
+  overflow: hidden;
+}
+
+.box-row {
+  @include clearfix;
+  width: 101.95%;
+  margin-left: -1.95%;
+  margin-right: -1.95%;
+
+   > [class^="column-"],
+  > [class*=" column-"] {
+    margin-left: 1.95%;
+  }
+}
+
+.column-12 {
+  width: 98.002%;
+}
+
+.column-11 {
+  float: left;
+  width: 89.668%;
+}
+
+.column-10 {
+  float: left;
+  width: 81.343%;
+}
+
+.column-9 {
+  float: left;
+  width: 73.013%;
+}
+
+.column-8 {
+  float: left;
+  width: 64.685%;
+}
+
+.column-7 {
+  float: left;
+  width: 56.304%;
+}
+
+.column-6 {
+  float: left;
+  width: 48.02%;
+}
+
+.column-5 {
+  float: left;
+  width: 39.75%;
+}
+
+.column-4 {
+  float: left;
+  width: 31.368%;
+}
+
+.column-3 {
+  float: left;
+  width: 23.0392%;
+}
+
+.column-2 {
+  float: left;
+  width: 14.71%;
+}
+
+.column-1 {
+  float: left;
+  width: 6.382%;
+}
+
+.pad-20 {
+  padding: 20px 0;
+}
+
+/*responsive*/
+// @media (max-width:1160px) {
+//   .fe-page-container {
+//     .op-content-wrap {
+//       margin-left: 0;
+//     }
+//   }
+// }
+// @media (max-width:736px) {
+//   .show-sm {
+//     display: block !important;
+//   }
+
+//   .hide-sm {
+//     display: none !important;
+//   }
+//   .frontend-items-list{
+//     padding:0 10px;
+//   }
+// }
+// @media (max-width: 414px) {
+//   .fe-page-container {
+//     margin: 60px 0 0;
+
+//     .op-content-wrap {
+//       padding: 10px 0;
+//     }
+//   }
+
+//   .box-alert-wrap {
+//     margin: -10px -10px 0;
+//   }
+// }

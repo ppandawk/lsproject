@@ -1,0 +1,32 @@
+/*font set*/
+$font-family: arial,sans-serif;
+$font-size-xs: 11px;
+$font-subtitle: 12px;
+$font-normal: 13px;
+$font-menu: 14px;
+$font-heading: 18px;
+$font-pagetitle: 20px;
+$font-special: 22px;
+$font-size-xxl: 26px;
+/* color set */
+$color-title: #3B444F;
+$color-normal: #586575;
+$color-sub: #7E8EA4;
+$color-sub-header: #7D8EA5;
+$color-disable: #BEC4CB;
+$color-success: #64BF2D;
+$color-fail: #D82C22;
+$color-warning: #F7B735;
+$color-info: #297CBB;
+$color-info-hover: #226DA5;
+$color-info-dark: #1D4174;
+$color-info-light: #BCCEE3;
+$color-link: #009EFB;
+/*link set*/
+$link-normal: $color-title;
+$link-active: $color-info;
+$link-hover: $link-active;
+/* background set */
+$color-background: #F4F5F8;
+/* border set*/
+$color-border: #E6E8EB;

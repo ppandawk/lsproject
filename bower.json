@@ -1,0 +1,13 @@
+{
+  "name": "newls",
+  "version": "1.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.6"
+  }
+}

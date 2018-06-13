@@ -1,0 +1,22 @@
+{
+  "name": "ls-project",
+  "version": "1.0.0",
+  "description": "ls project mock up",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "event-stream": "^3.3.4",
+    "gulp": "~3.9.1",
+    "gulp-bower": "~0.0.10",
+    "gulp-clean-css": "~2.3.2",
+    "gulp-compass": "~2.1.0"
+  },
+  "devDependencies": {
+    "gulp-compass": "^2.1.0",
+    "gulp-jade": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
