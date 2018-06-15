@@ -1,6 +1,6 @@
 .ls-wrap{
   margin: auto;
-  width: 1280px;
+  width: 1012px;
   overflow: hidden;
   .lw-img{
     width: 10%;
@@ -8,6 +8,7 @@
     img{
       width: 30%;
       margin-top: 7px;
+      box-shadow:none;
     }
   }
   .lw-con{
@@ -23,7 +24,7 @@
           color: #427A55;
           display: block;
           font-size: 18px;
-          padding: 18px 35px;
+          padding: 18px 30px;
           &:hover{
             color: #203B29;
           }

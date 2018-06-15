@@ -1,9 +1,7 @@
 .frontend-tab-menu {
+  height: 40px;
   margin: 30px 0;
   border-bottom: 1px solid $color-border;
-
-  // @include background(#fff, '../images/frontend/dotgrey.png', repeat-x, 0, bottom);
-  height: 40px;
 
   .list-tab-menu {
     height: 40px;

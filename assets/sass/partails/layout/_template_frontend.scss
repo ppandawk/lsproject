@@ -49,12 +49,16 @@ ul {
 }
 
 img {
+  width: 100%;
   border: none;
+  -webkit-box-shadow: 12px 12px 15px -12px rgba(0,0,0,0.71);
+  -moz-box-shadow: 12px 12px 15px -12px rgba(0,0,0,0.71);
+  box-shadow: 12px 12px 15px -12px rgba(0,0,0,0.71);
 }
 
 .main-container{
   margin: auto;
-  width: 1280px;
+  width: 1012px;
   &.full{
     margin: 0;
     width: 100%;
@@ -62,11 +66,15 @@ img {
   &.header,&.footer{
     background: #f5f5f5;
   }
+  &.content{
+    background: #c9c9c9;
+  }
 }
 
 .content {
   min-height: 100%;
-  margin: 0 0 -50px;
+  // margin: 0 0 -50px;
+  margin: 0;
 }
 
 /* column style */
@@ -147,6 +155,56 @@ img {
 
 .pad-20 {
   padding: 20px 0;
+}
+
+.c-img{
+  position: relative;
+  margin-bottom: 16px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  .bg-op{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    &:hover{
+      background: rgba(102,98,102,1);
+      background: -moz-linear-gradient(top, rgba(102,98,102,1) 0%, rgba(255,255,255,0.37) 63%, rgba(255,255,255,0) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(102,98,102,1)), color-stop(63%, rgba(255,255,255,0.37)), color-stop(100%, rgba(255,255,255,0)));
+      background: -webkit-linear-gradient(top, rgba(102,98,102,1) 0%, rgba(255,255,255,0.37) 63%, rgba(255,255,255,0) 100%);
+      background: -o-linear-gradient(top, rgba(102,98,102,1) 0%, rgba(255,255,255,0.37) 63%, rgba(255,255,255,0) 100%);
+      background: -ms-linear-gradient(top, rgba(102,98,102,1) 0%, rgba(255,255,255,0.37) 63%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(to bottom, rgba(102,98,102,1) 0%, rgba(255,255,255,0.37) 63%, rgba(255,255,255,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666266', endColorstr='#ffffff', GradientType=0 );
+    }
+  }
+}
+
+.qat-content {
+  font-size: 16px;
+  margin-top: 38px;
+  padding-right: 20px;
+  word-break: break-word;
+}
+
+.box-title{
+  font-size: 20px;
+  margin-bottom: 20px;
+  span{
+    border-bottom: 2px solid red;
+  }
+}
+.box-content{
+  font-size: 16px;
+  word-break: break-word;
+}
+
+.box-table{
+  display: table;
+  .box-cell{
+    display: table-cell;
+    vertical-align: middle;
+  }
 }
 
 /*responsive*/
