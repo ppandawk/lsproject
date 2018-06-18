@@ -6,10 +6,9 @@
 	<body>
 		<div class="content">
 			<?php include 'src/header.html';?>
-			<?php include 'src/index.html';?>
+			<?php include 'src/contactus.html';?>
 		</div>
 		<?php include 'src/footer.html';?>
-
 		<?php include 'src/components/script.html';?>
 	</body>
 </html>
