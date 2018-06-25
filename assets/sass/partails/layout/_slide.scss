@@ -68,3 +68,11 @@
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
+
+@media (max-width:768px) {
+  .slideshow-container {
+    img {
+      max-height: 360px;
+    }
+  }
+}
