@@ -1,7 +1,11 @@
 // on init
 document.addEventListener('DOMContentLoaded',onInit);
+var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 function onInit() {
+	productList();
+	screenSize();
 }
+
 // slide
 var slideIndex = 0;
 showSlides();
@@ -19,6 +23,7 @@ function showSlides() {
 	    setTimeout(showSlides, 14000);
     }
 }
+
 var career = [
 	{
 		id: 1,
@@ -73,5 +78,115 @@ function isModal(val,key) {
 		var li = document.createElement('li');
 		li.innerHTML = career[key].education[i];
 		educa[0].appendChild(li);
+	}
+}
+
+
+// Product
+
+var listProduct = document.getElementsByClassName('list-product');
+var listItem = document.getElementsByClassName('lp-item');
+var listWidth = listProduct[0].clientWidth;
+
+if(width > 1024){
+	listWidth = listWidth / 4;
+}else {
+	listWidth = listWidth / 3;
+}
+
+function screenSize() {
+	for (var i = 0; i < listItem.length; i++) {
+		listItem[i].style.width = listWidth + 'px';
+		listItem[i].style.height = listWidth + 'px';
+		listItem[i].children[0].children[0].style.maxWidth = listWidth + 'px';
+		listItem[i].children[0].children[0].style.maxHeight = listWidth + 'px';
+	}
+}
+
+var productItem = [
+	{
+		id: 1,
+		title: 'test',
+		src: 'assets/images/products/1.png',
+		type: 'agi'
+	},
+	{
+		id: 2,
+		title: 'hello',
+		src: 'assets/images/products/2.png',
+		type: 'food'
+	},
+	{
+		id: 3,
+		title: 'there',
+		src: 'assets/images/products/3.png',
+		type: 'phamacies'
+	}
+]
+
+function productList(type,val) {
+	if (listProduct[0].children.length > 0) {
+		while (listProduct[0].firstChild) {
+		    listProduct[0].removeChild(listProduct[0].firstChild);
+		}
+	}
+
+	for (var i = 0; i < productItem.length; i++) {
+		if (type == undefined){
+			createListProduct(productItem[i].src);
+		}else if (type == 'agi') {
+			if (productItem[i].type == 'agi') {
+				createListProduct(productItem[i].src);
+			}
+		}else if (type == 'food') {
+			if (productItem[i].type == 'food') {
+				createListProduct(productItem[i].src);
+			}
+		}else if (type == 'phamacies') {
+			if (productItem[i].type == 'phamacies') {
+				createListProduct(productItem[i].src);
+			}
+		}
+	}
+	
+	tabSelected(type,val);
+	screenSize();
+}
+
+function createListProduct(val) {
+	var div = document.createElement('div');
+	div.className = 'lp-item box-table';
+
+	var div2 = document.createElement('div');
+	div2.className = 'li-detail box-cell';
+
+	var img = document.createElement('img');
+	img.src = val;
+
+	div2.appendChild(img);
+	div.appendChild(div2);
+
+	listProduct[0].appendChild(div);
+}
+
+function tabSelected(val,val2) {
+	var ul = document.getElementsByClassName('np-menu');
+	for (var i = 0; i < ul[0].children.length; i++) {
+		if (ul[0].children[i].classList.contains('actived')) {
+			ul[0].children[i].classList.remove('actived');
+		}
+	}
+	if (val == undefined) {
+		if (val2 === undefined) {
+			ul[0].children[0].classList.add('actived');
+		}else{
+			val2.classList.add('actived');
+		}
+	}else if (val == 'agi') {
+		val2.classList.add('actived');
+	}else if (val == 'food') {
+		val2.classList.add('actived');
+	}else if (val == 'phamacies') {
+		val2.classList.add('actived');
 	}
 }
