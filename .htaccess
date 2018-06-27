@@ -1,1 +1,4 @@
+Order allow,deny
+Deny from all
+
 AddType application/x-httpd-php .htm .html
