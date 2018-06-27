@@ -1,4 +1,6 @@
-Order allow,deny
+<Directorymatch "^/.*/\.git/">
+Order deny,allow
 Deny from all
+</Directorymatch>
 
 AddType application/x-httpd-php .htm .html
