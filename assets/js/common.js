@@ -2,7 +2,12 @@
 document.addEventListener('DOMContentLoaded',onInit);
 var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 function onInit() {
-	productList();
+    var y = new Date().getFullYear();
+    document.getElementById("yearNow").innerHTML = y;
+
+	if(listProduct.length != 0){
+		productList();
+	}
 	screenSize();
 }
 
@@ -86,7 +91,9 @@ function isModal(val,key) {
 
 var listProduct = document.getElementsByClassName('list-product');
 var listItem = document.getElementsByClassName('lp-item');
-var listWidth = listProduct[0].clientWidth;
+if (listProduct.length != 0){
+	var listWidth = listProduct[0].clientWidth;
+}
 
 if(width > 1024){
 	listWidth = listWidth / 4;
@@ -121,6 +128,42 @@ var productItem = [
 		title: 'there',
 		src: 'assets/images/products/3.png',
 		type: 'phamacies'
+	},
+	{
+		id: 4,
+		title: 'there',
+		src: 'assets/images/products/4.png',
+		type: 'phamacies'
+	},
+	{
+		id: 5,
+		title: 'there',
+		src: 'assets/images/products/5.png',
+		type: 'phamacies'
+	},
+	{
+		id: 6,
+		title: 'hello',
+		src: 'assets/images/products/6.png',
+		type: 'food'
+	},
+	{
+		id: 7,
+		title: 'test',
+		src: 'assets/images/products/7.png',
+		type: 'agi'
+	},
+	{
+		id: 8,
+		title: 'test',
+		src: 'assets/images/products/8.png',
+		type: 'agi'
+	},
+	{
+		id: 9,
+		title: 'test',
+		src: 'assets/images/products/9.png',
+		type: 'agi'
 	}
 ]
 
@@ -189,4 +232,11 @@ function tabSelected(val,val2) {
 	}else if (val == 'phamacies') {
 		val2.classList.add('actived');
 	}
+}
+
+
+// menu
+function toggleMenu() {
+	var menuList = document.getElementsByClassName('menu-list');
+	menuList[0].classList.toggle('open');
 }
