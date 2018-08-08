@@ -1,5 +1,6 @@
 /*font set*/
-$font-family: arial,sans-serif;
+// $font-family: arial,sans-serif;
+$font-family: es-light, Fallback, sans-serif;
 $font-size-xs: 11px;
 $font-subtitle: 12px;
 $font-normal: 13px;
@@ -30,3 +31,8 @@ $link-hover: $link-active;
 $color-background: #F4F5F8;
 /* border set*/
 $color-border: #E6E8EB;
+
+@font-face {
+  font-family: 'es-light';
+  src:  url('../font/ekkamai/EkkamaiStandard-Light.ttf') format('truetype');
+}
