@@ -5,13 +5,23 @@
 		</div>
 		<div class="lw-con">
 			<i class="fas fa-bars ham" onclick="toggleMenu()"></i>
+			<div class="lang">
+				<a href="#" onclick="setLang('TH')">TH</a> | <a href="#" onclick="setLang('EN')">EN</a>
+			</div>
 			<ul class="menu-list">
 				<li><a href="index.html">หน้าแรก</a></li>
-				<li><a href="product.html">สินค้า</a></li>
+				<li><a href="product.html">รายการสินค้า</a></li>
 				<li><a href="aboutus.html">เกี่ยวกับเรา</a></li>
 				<li><a href="contactus.html">ติดต่อเรา</a></li>
-				<li><a href="career.html">ร่วมงานกับเรา</a></li>
-				<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+				<li onclick="isOpenSub(this)">
+					<a href="#">บุคคลากรสำคัญ</a>
+					<div class="sub-menu">
+						<a href="#">Hello</a>
+						<a href="#">test</a>
+					</div>
+				</li>
+				<!-- <li><a href="career.html">ร่วมงานกับเรา</a></li> -->
+				<!-- <li><a href="#"><i class="fab fa-facebook"></i></a></li> -->
 			</ul>
 		</div>
 		<div class="clearfix"></div>

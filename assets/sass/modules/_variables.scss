@@ -23,16 +23,12 @@ $color-info-hover: #226DA5;
 $color-info-dark: #1D4174;
 $color-info-light: #BCCEE3;
 $color-link: #009EFB;
-/*link set*/
-$link-normal: $color-title;
-$link-active: $color-info;
-$link-hover: $link-active;
-/* background set */
-$color-background: #F4F5F8;
-/* border set*/
-$color-border: #E6E8EB;
 
 @font-face {
   font-family: 'es-light';
   src:  url('../font/ekkamai/EkkamaiStandard-Light.ttf') format('truetype');
+}
+
+.clearfix {
+  @include clearfix;
 }

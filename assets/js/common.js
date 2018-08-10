@@ -1,6 +1,7 @@
 // on init
 document.addEventListener('DOMContentLoaded',onInit);
 var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+var lang = "";
 function onInit() {
     var y = new Date().getFullYear();
     document.getElementById("yearNow").innerHTML = y;
@@ -9,6 +10,16 @@ function onInit() {
 		productList();
 	}
 	screenSize();
+
+	// localStorage.removeItem("language");
+	setLang();
+	// contentLang();
+}
+
+// set language
+function setLang(val){
+	window.localStorage.language = !val ? "TH" : val;
+	lang = window.localStorage.language;
 }
 
 // slide
@@ -49,6 +60,11 @@ var career = [
 		education: ['this','is','a','education']
 	}
 ]
+
+// open sub menu
+function isOpenSub(val) {
+	val.children[1].className = val.children[1].className == "sub-menu" ? "sub-menu show" : "sub-menu";
+}
 
 // modal
 var body = document.getElementsByTagName("body");
@@ -238,5 +254,26 @@ function tabSelected(val,val2) {
 // menu
 function toggleMenu() {
 	var menuList = document.getElementsByClassName('menu-list');
+	var menuLang = document.getElementsByClassName('lang');
 	menuList[0].classList.toggle('open');
+	menuLang[0].classList.toggle('open');
 }
+
+
+$(document).ready(function(){
+	$('.owl-one').owlCarousel({
+	    items:1,
+	    loop:true,
+	    autoplay:true,
+	    autoplayTimeout:5000,
+	    autoplayHoverPause:true
+	})
+	$('.owl-two').owlCarousel({
+	    items:4,
+	    loop:true,
+	    dots:false,
+	    // autoplay:true,
+	    // autoplayTimeout:5000,
+	    // autoplayHoverPause:true
+	})
+});
