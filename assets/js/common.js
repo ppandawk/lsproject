@@ -272,8 +272,8 @@ $(document).ready(function(){
 	    items:4,
 	    loop:true,
 	    dots:false,
-	    // autoplay:true,
-	    // autoplayTimeout:5000,
-	    // autoplayHoverPause:true
+	    autoplay:true,
+	    autoplayTimeout:5000,
+	    autoplayHoverPause:false
 	})
 });

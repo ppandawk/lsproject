@@ -4,11 +4,11 @@
 }
 
 .lw-img {
-    width: 50px;
+    width: 20%;
     float: left;
     img {
         width: 100%;
-        margin-top: 8px;
+        margin-top: 15px;
         box-shadow: none;
     }
 }
@@ -45,6 +45,7 @@
                 float: left;
                 width: 100%;
                 display: none;
+                z-index: 99999;
                 padding: 10px 0;
                 text-align: left;
                 margin-top: 10px;
@@ -95,11 +96,11 @@
             }
         }
         .box-title {
-            width: 17%;
+            width: 28%;
             font-weight: bold;
         }
         .box-info {
-            width: 70%;
+            width: 60%;
         }
         .fw-social {
             width: 100%;

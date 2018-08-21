@@ -65,6 +65,7 @@ img {
 }
 
 
+
 /* column style */
 
 .box-overflow {
@@ -152,7 +153,6 @@ img {
 }
 
 // general
-$screen-max: 1024px;
 
 .box-table {
     display: table;
@@ -183,7 +183,7 @@ $screen-max: 1024px;
 
 .main-container {
     margin: auto;
-    width: $screen-max;
+    width: 90%;
     &.full {
         margin: 0;
         width: 100%;
@@ -200,24 +200,68 @@ $screen-max: 1024px;
     }
     .ls-wrap {
         margin: auto;
-        width: $screen-max;
+        width: 90%;
         overflow: hidden;
+    }
+    .box-title{
+        font-weight: bold;
+        font-size: $font-pagetitle;
+        &.bt-bold{
+            font-weight: bold;
+        }
+        &.bt-line{
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid black;
+        }
     }
 }
 
-#owl-demo .item img{
+#owl-demo .item img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-@media (max-width: 1050px) {
-    .main-container {
-        .ls-wrap {
-            width: 90% !important;
+.con-info-wrap{
+    padding: 5px;
+    .box-img{
+        width: 10%;
+        float: left;
+        i{
+            font-size: $font-heading;
+        }
+        &.large{
+            width: 15%;
+            i{
+                font-size: 50px;
+                padding-top: 5px;
+            }
+        }
+        &.full{
+            width: 100%;
+            text-align: center;
+            img{
+                width: 60%;
+            }
+        }
+    }
+    .box-title{
+        width: 25%;
+        float: left;
+        font-size: $font-pagetitle;
+    }
+    .box-info{
+        width: 65%;
+        float: left;
+        font-size: $font-menu;
+        &.full{
+            width: 85%;
         }
     }
 }
+
+@media (max-width: 1050px) {}
 
 @media (max-width: 768px) {}
 
@@ -244,7 +288,6 @@ $screen-max: 1024px;
 //         }
 //     }
 // }
-
 // main sec4
 // .qat-content {
 //     margin-top: 1%;
@@ -253,7 +296,6 @@ $screen-max: 1024px;
 //     padding-right: 20px;
 //     word-break: break-word;
 // }
-
 // main sec5
 // .sec5 {
 //     padding: 20px;
@@ -263,7 +305,6 @@ $screen-max: 1024px;
 //         height: 500px;
 //     }
 // }
-
 // .box-title {
 //     font-size: 30px;
 //     font-weight: bold;
@@ -272,7 +313,6 @@ $screen-max: 1024px;
 //         border-bottom: 2px solid red;
 //     }
 // }
-
 // .box-content {
 //     font-size: 16px;
 //     word-break: break-word;
@@ -292,7 +332,6 @@ $screen-max: 1024px;
 //         }
 //     }
 // }
-
 // .career-wrap {
 //     font-size: 18px;
 //     position: relative;
@@ -324,11 +363,9 @@ $screen-max: 1024px;
 //         }
 //     }
 // }
-
 // .freeze {
 //     overflow: hidden;
 // }
-
 // .cw-modal {
 //     top: 0;
 //     bottom: 0;
@@ -387,7 +424,6 @@ $screen-max: 1024px;
 //         }
 //     }
 // }
-
 // about us
 // .box-list-img {
 //     ul {
@@ -398,7 +434,6 @@ $screen-max: 1024px;
 //         }
 //     }
 // }
-
 // .box-list-content {
 //     ul {
 //         li {
@@ -457,8 +492,6 @@ $screen-max: 1024px;
 //     }
 // }
 
-
-
 /*responsive*/
 
 // @media (max-width:1024px) {
@@ -472,7 +505,6 @@ $screen-max: 1024px;
 //         }
 //     }
 // }
-
 // @media (max-width:768px) {
 //     .hide {
 //         display: none;
@@ -542,7 +574,6 @@ $screen-max: 1024px;
 //         }
 //     }
 // }
-
 // @media (max-width: 736px) {
 //   .cw-modal {
 //     .cm-inner {
@@ -558,7 +589,6 @@ $screen-max: 1024px;
 //     }
 //   }
 // }
-
 // @media (max-width: 414px) {
 //   .sec3 {
 //       padding: 0 20px;
@@ -622,33 +652,6 @@ $screen-max: 1024px;
 //       }
 //   }
 
-//   .about-box {
-//       .sec2 {
-//           .column-8 {
-//               width: 98.002%;
-//           }
-//       }
-//       .box-list-img {
-//           ul {
-//               li {
-//                   width: 48.002%;
-//               }
-//           }
-//       }
-//       .box-list-content {
-//           ul {
-//               li {
-//                   display: block;
-//                   margin-bottom: 20px;
-//                   width: calc(98.002% - 20px);
-//                   &:last-child {
-//                       margin-bottom: 0;
-//                   }
-//               }
-//           }
-//       }
-//   }
-
 //   .contactus-box {
 //       .contact-list {
 //           li {
@@ -657,7 +660,6 @@ $screen-max: 1024px;
 //           }
 //       }
 //   }
-
 //   .career-box {
 //       .career-wrap {
 //           .box-table-row {
@@ -669,7 +671,6 @@ $screen-max: 1024px;
 //           }
 //       }
 //   }
-
 //   .cw-modal {
 //     .cm-inner {
 //       top: 0;
