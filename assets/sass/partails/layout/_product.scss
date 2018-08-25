@@ -1,53 +1,154 @@
-.nav-product{
-	margin-top: 20px;
-	border-bottom: 2px solid #049344;
-	li{
-		cursor: pointer;
-		font-size: 16px;
-		padding: 5px 20px;
-		margin-bottom: -2px;
-		display: inline-block;
-		border-bottom: 2px solid transparent; 
-		&:hover, &.actived{
-			border-bottom: 2px solid #203B29; 
-		}
-	}	
+.nav-product {
+    color: #ffffff;
+    padding: 20px 0;
+    background: #174eb5;
+    margin: -40px auto 40px;
+    .np-wrap {
+        width: 1004px;
+        margin: auto;
+        .title {
+            font-weight: bold;
+            font-size: $font-pagetitle;
+        }
+    }
+    .np-menu {
+        margin: 15px 20px 0 20px;
+    }
+    li {
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px 25px;
+        margin-bottom: -2px;
+        display: inline-block;
+        border-right: 1px solid #fff;
+        &:first-child {
+            border-left: 1px solid #fff;
+        } // border-bottom: 2px solid transparent; 
+        &:hover,
+        &.actived {
+            color: #80d417; // border-bottom: 2px solid #203B29; 
+        }
+    }
 }
 
-.list-product{
-	width: 100%;
-	padding: 5px 0px;
-	overflow: hidden;
-	.lp-item{
-	    width: 200px;
-	    height: 200px;
-	    float: left;
-	    position: relative;
-	    .li-detail{
-	    	line-height: 0;
-    	    text-align: center;
-		    background-color: #f4f5f8;
+// .list-product{
+// 	width: 100%;
+// 	padding: 5px 0px;
+// 	overflow: hidden;
+// 	.lp-item{
+// 	    width: 200px;
+// 	    height: 200px;
+// 	    float: left;
+// 	    position: relative;
+// 	    .li-detail{
+// 	    	line-height: 0;
+//     	    text-align: center;
+// 		    background-color: #f4f5f8;
+// 	    }
+// 		img{  
+// 			max-width: 200px;
+//     		max-height: 200px;
+// 		}
+// 	}
+// }
+.list-product-2 {
+    width: 100%;
+    padding: 5px 0px;
+    overflow: hidden;
+    .lp-item {
+        float: left;
+        margin: 0 10px;
+        position: relative;
+        text-align: center;
+        width: calc(25% - 20px);
+        background-color: #f4f5f8;
+        border: 2px solid #427A55;
+        .lp-img {
+            padding: 5px;
+            line-height: 0;
+	        height: 165px;
+	        width: 100%;
+        	.box-cell{
+        		line-height: 0;
+        		background-color: #c9c9c9;
+        		img{
+        			max-height: 165px;
+        		}
+        	}
+        }
+        .lp-img-list {
+            width: 100%;
+            padding: 5px;
+            .lp-img {
+                padding: 0;
+                float: left;
+                height: 30px;
+                margin: 0 1px;
+                width: calc(25% - 2px);
+	        	.box-cell{
+	        		img{
+	        			max-height: 30px;
+	        		}
+	        	}
+            }
+        }
+	    .lp-info{
+	    	.li-left{
+	    		width: 70%;
+	    		float: left;
+	    		text-align: left;
+	    		padding-left: 5px;
+	    		.ll-info{
+	    			border-bottom: 1px solid black;
+					.lin-title{
+						float: left;
+						width: 45px;
+						font-weight: bold;
+						margin-right: 10px;
+					}
+					.lin-name{
+						float: left;
+					    word-break: break-all;
+        				@include numofLine(3);
+						width: calc(100% - 55px);
+					}
+					&:last-child{
+						border-bottom: none;
+					}
+					&.sub{
+						.lin-title{
+							font-size: $font-size-xs;
+						}
+					}
+	    		}
+	    	}
+	    	.li-right{
+	    		width: 30%;
+	    		float: right;
+	    		text-align: right;
+	    		padding-right: 5px;
+	    		img{
+	    			width: 45%;
+	    		}
+	    	}
 	    }
-		img{  
-			max-width: 200px;
-    		max-height: 200px;
-		}
-	}
+    }
 }
+
 
 @media (max-width:1024px) {
-	.nav-product{
-	    width: 100%;
-		overflow-x: auto;
-	    overflow-y: hidden;
-	    .np-menu{
-	        width: max-content;
-	        li{
-				&.actived{
-					color: #203B29;
-					background: #c8d6cd; 
-				}
-	        }
-	    }
-   	}
+    .nav-product {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        .np-menu {
+            width: max-content;
+            li {
+                &.actived {
+                    color: #203B29;
+                    background: #c8d6cd;
+                }
+            }
+        }
+    }
 }

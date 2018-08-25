@@ -4,7 +4,7 @@
 }
 
 .lw-img {
-    width: 20%;
+    width: 240px;
     float: left;
     img {
         width: 100%;
@@ -16,12 +16,14 @@
 .lw-con {
     width: 70%;
     float: right;
+    margin-top: 10px;
     .ham {
         display: none;
     }
     .lang {
         width: 100%;
         text-align: right;
+        margin-bottom: 5px;
         a {
             font-size: $font-normal;
         }
@@ -43,9 +45,9 @@
             }
             .sub-menu {
                 float: left;
-                width: 100%;
+                width: 150px;
                 display: none;
-                z-index: 99999;
+                z-index: 9999;
                 padding: 10px 0;
                 text-align: left;
                 margin-top: 10px;

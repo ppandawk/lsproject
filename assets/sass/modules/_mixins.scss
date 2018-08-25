@@ -24,6 +24,13 @@
     -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
     box-shadow: $shadow;
 }
+
+@mixin numofLine($num) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical; 
+}
 // Placeholder text
 @mixin placeholder($color: $input-color-placeholder) {
     // Firefox

@@ -1,44 +1,82 @@
-<div class="main-container career-box">
-	<div class="box-row pad-20">
-		<div class="column-12 text-center">
-			<div class="box-title">
+<img class="shadow" src="https://dummyimage.com/1500x600/000/1c6b0e.png" alt="career">
+<div class="main-container full career-box">
+	<div class="ls-wrap">
+		<div class="">
+			<div class="box-title text-center bt-line bt-half">
 				<span>ตำแหน่งที่เปิดรับ</span>
 			</div>
-			<div class="box-content">
-				If you get a kick out of solving problems for people, browse through our job openings and drop us a message.
-			</div>
-			<div class="box-table career-wrap">
-				<div class="box-table-row head">
-					<div class="box-cell">
-						ตำแหน่ง
+			<div class="career-wrap">
+				<div class="cw-box shadow" onclick="isModal(true,0)">
+					<div class="cb-left">
+						<div class="cb-title">
+							<strong>ตำแหน่ง:</strong> วิศวะ
+						</div>
+						<div class="cb-info">
+							<span>การศึกษา: มัธยมศึกษาปีที่ 6 ขึ้นไป</span>
+							<br>
+							<span>ประสบการณ์: 1-3 ปี</span>
+						</div>
+						<div class="cb-foot">
+							<a href="#">(ดูรายละเอียดเพิ่มเติม)</a>
+						</div>
 					</div>
-					<div class="box-cell">
-						จำนวน
+					<div class="cb-right">
+						<div class="expired-box">
+							วันที่ประกาศ-หมดเขต (20 ก.ค. - 20 ส.ค. 2561)
+						</div>
+						<div class="cb-foot">
+							<button class="btn">สมัครเลย</button>
+						</div>
 					</div>		
+					<div class="clearfix"></div>
 				</div>
-				<div class="box-table-row" onclick="isModal(true,0)">
-					<div class="box-cell">
-						วิศวะ
+				<div class="cw-box shadow" onclick="isModal(true,1)">
+					<div class="cb-left">
+						<div class="cb-title">
+							<strong>ตำแหน่ง:</strong> วิศวะ
+						</div>
+						<div class="cb-info">
+							<span>การศึกษา: มัธยมศึกษาปีที่ 6 ขึ้นไป</span>
+							<br>
+							<span>ประสบการณ์: 1-3 ปี</span>
+						</div>
+						<div class="cb-foot">
+							<a href="#">(ดูรายละเอียดเพิ่มเติม)</a>
+						</div>
 					</div>
-					<div class="box-cell">
-						2 คน
+					<div class="cb-right">
+						<div class="expired-box">
+							วันที่ประกาศ-หมดเขต (20 ก.ค. - 20 ส.ค. 2561)
+						</div>
+						<div class="cb-foot">
+							<button class="btn">สมัครเลย</button>
+						</div>
 					</div>		
+					<div class="clearfix"></div>	
 				</div>
-				<div class="box-table-row" onclick="isModal(true,1)">
-					<div class="box-cell">
-						บัญชี
+				<div class="cw-box shadow" onclick="isModal(true,2)">
+					<div class="cb-left">
+						<div class="cb-title">
+							<strong>ตำแหน่ง:</strong> วิศวะ
+						</div>
+						<div class="cb-info">
+							<span>การศึกษา: มัธยมศึกษาปีที่ 6 ขึ้นไป</span>
+							<br>
+							<span>ประสบการณ์: 1-3 ปี</span>
+						</div>
+						<div class="cb-foot">
+							<a href="#">(ดูรายละเอียดเพิ่มเติม)</a>
+						</div>
 					</div>
-					<div class="box-cell">
-						3 คน
+					<div class="cb-right">
+						<div class="expired-box">
+							วันที่ประกาศ-หมดเขต (20 ก.ค. - 20 ส.ค. 2561)
+						</div>
+						<div class="cb-foot">
+							<button class="btn">สมัครเลย</button>
+						</div>
 					</div>		
-				</div>
-				<div class="box-table-row" onclick="isModal(true,2)">
-					<div class="box-cell">
-						เสมียญ
-					</div>
-					<div class="box-cell">
-						1 คน
-					</div>		
+					<div class="clearfix"></div>	
 				</div>
 			</div>
 		</div>	
@@ -47,30 +85,36 @@
 <div class="cw-modal">
 	<div class="cm-inner">
 		 <div class="ci-title">
-		 	<div class="title"></div>
+		 	<div class="title">
+				<img src="assets/images/logo/new_logo.png">
+		 	</div>
 		 	<div class="icon"><i class="fas fa-times" onclick="isModal(false,0)"></i></div>
 		 	<div class="clearfix"></div>	
 		 </div>
 		 <div class="ci-content">
-		 	<div class="cc-title">คุณสมบัติ</div>
-		 	<div class="cc-list">
-		 		<ul class="specialist">
-		 			<!-- <li>ปริญญาตรี สาขา วิศวะกรรมศาสตร์</li> -->
-		 		</ul>
+		 	<div class="cc-position">
+		 		<strong>ตำแหน่ง: <span class="position"></span></strong><br>
+		 		<hr>
+		 		วันที่ประกาศ - หมดเขต ( <span class="expired"></span> )
 		 	</div>
-		 	<div class="cc-title">วุฒิการศึกษา</div>
-		 	<div class="cc-list">
-		 		<ul class="education">
-		 			<li>ปริญญาตรี สาขา วิศวะกรรมศาสตร์</li>
-		 		</ul>
-		 	</div>
-		 	<div class="cc-title">สวัสดิการ</div>
-		 	<div class="cc-list">
-		 		<ul>
-		 			<li>รถรับส่ง</li>
-		 			<li>ประกันสังคม</li>
-		 			<li>โบนัสประจำปี</li>
-		 		</ul>
+		 	<div class="cc-wrap">
+			 	<div class="cc-title">หน้าที่ความรับผิดชอบ</div>
+			 	<div class="cc-list">
+			 		<p class="responsibility"></p>
+			 	</div>
+			 	<div class="cc-title">ความต้องการ</div>
+			 	<div class="cc-list">
+			 		<ul class="specialist"></ul>
+			 		<!-- <ul class="education"></ul> -->
+			 	</div>
+			 	<div class="cc-title">สวัสดิการ</div>
+			 	<div class="cc-list">
+			 		<ul>
+			 			<li>รถรับส่ง</li>
+			 			<li>ประกันสังคม</li>
+			 			<li>โบนัสประจำปี</li>
+			 		</ul>
+			 	</div>
 		 	</div>
 		 </div>
 	</div>
