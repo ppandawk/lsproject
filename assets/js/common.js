@@ -9,7 +9,7 @@ function onInit() {
 	if(listProduct.length != 0){
 		productList();
 	}
-	screenSize();
+	// screenSize();
 
 	// localStorage.removeItem("language");
 	setLang();
@@ -122,58 +122,61 @@ function screenSize() {
 var productItem = [
 	{
 		id: 1,
-		title: 'test',
-		src: 'assets/images/products/1.png',
+		name: 'test',
+		code: '0acs3',
+		src: ['assets/images/products/1.png','assets/images/products/2.png','assets/images/products/3.png'],
+		plasticType: ['pet','pvc','pp','ps'],
 		type: 'agi'
 	},
-	{
-		id: 2,
-		title: 'hello',
-		src: 'assets/images/products/2.png',
-		type: 'food'
-	},
-	{
-		id: 3,
-		title: 'there',
-		src: 'assets/images/products/3.png',
-		type: 'phamacies'
-	},
-	{
-		id: 4,
-		title: 'there',
-		src: 'assets/images/products/4.png',
-		type: 'phamacies'
-	},
-	{
-		id: 5,
-		title: 'there',
-		src: 'assets/images/products/5.png',
-		type: 'phamacies'
-	},
-	{
-		id: 6,
-		title: 'hello',
-		src: 'assets/images/products/6.png',
-		type: 'food'
-	},
-	{
-		id: 7,
-		title: 'test',
-		src: 'assets/images/products/7.png',
-		type: 'agi'
-	},
-	{
-		id: 8,
-		title: 'test',
-		src: 'assets/images/products/8.png',
-		type: 'agi'
-	},
-	{
-		id: 9,
-		title: 'test',
-		src: 'assets/images/products/9.png',
-		type: 'agi'
-	}
+	// ,
+	// {
+	// 	id: 2,
+	// 	title: 'hello',
+	// 	src: 'assets/images/products/2.png',
+	// 	type: 'food'
+	// },
+	// {
+	// 	id: 3,
+	// 	title: 'there',
+	// 	src: 'assets/images/products/3.png',
+	// 	type: 'phamacies'
+	// },
+	// {
+	// 	id: 4,
+	// 	title: 'there',
+	// 	src: 'assets/images/products/4.png',
+	// 	type: 'phamacies'
+	// },
+	// {
+	// 	id: 5,
+	// 	title: 'there',
+	// 	src: 'assets/images/products/5.png',
+	// 	type: 'phamacies'
+	// },
+	// {
+	// 	id: 6,
+	// 	title: 'hello',
+	// 	src: 'assets/images/products/6.png',
+	// 	type: 'food'
+	// },
+	// {
+	// 	id: 7,
+	// 	title: 'test',
+	// 	src: 'assets/images/products/7.png',
+	// 	type: 'agi'
+	// },
+	// {
+	// 	id: 8,
+	// 	title: 'test',
+	// 	src: 'assets/images/products/8.png',
+	// 	type: 'agi'
+	// },
+	// {
+	// 	id: 9,
+	// 	title: 'test',
+	// 	src: 'assets/images/products/9.png',
+	// 	type: 'agi'
+	// }
 ]
 
 function productList(type,val) {
@@ -185,40 +188,53 @@ function productList(type,val) {
 
 	for (var i = 0; i < productItem.length; i++) {
 		if (type == undefined){
-			createListProduct(productItem[i].src);
+			createListProduct(productItem[i]);
 		}else if (type == 'agi') {
 			if (productItem[i].type == 'agi') {
-				createListProduct(productItem[i].src);
+				createListProduct(productItem[i]);
 			}
 		}else if (type == 'food') {
 			if (productItem[i].type == 'food') {
-				createListProduct(productItem[i].src);
+				createListProduct(productItem[i]);
 			}
 		}else if (type == 'phamacies') {
 			if (productItem[i].type == 'phamacies') {
-				createListProduct(productItem[i].src);
+				createListProduct(productItem[i]);
 			}
 		}
 	}
 	
 	tabSelected(type,val);
-	screenSize();
+	// screenSize();
 }
 
 function createListProduct(val) {
-	var div = document.createElement('div');
-	div.className = 'lp-item box-table';
+	var totalList = '';
+	var totalProductType = '';
 
-	var div2 = document.createElement('div');
-	div2.className = 'li-detail box-cell';
+	// img list
+	for (var p = 0; p < val.src.length; p++) {
+		var divLLimg  = "<img src='" + val.src[p] + "'>";
+		var divLLCell = "<div class='box-cell'>" + divLLimg + "</div>";
+		var divLLitem = "<div class='lp-img box-table'>" + divLLCell + "</div>";
+		totalList += divLLitem;
+	}
 
-	var img = document.createElement('img');
-	img.src = val;
+	// plastic type
+	for (var q = 0; q < val.plasticType.length; q++) {
+		totalProductType += "<img src='assets/images/plastic_type/" + val.plasticType[q] + ".png' alt='" + val.plasticType[q] + "'>"
+	}
 
-	div2.appendChild(img);
-	div.appendChild(div2);
+	// set name and code
+	var divInfo = "<div class='ll-info'><div class='lin-title'>ชื่อสินค้า</div><div class='lin-name'>" + val.name + "</div><div class='clearfix'></div></div>"
+	var divSubInfo = "<div class='ll-info sub'><div class='lin-title'>รหัสสินค้า</div><div class='lin-name'>" + val.code + "</div><div class='clearfix'></div></div>"
 
-	listProduct[0].appendChild(div);
+	var divImg = "<img src='" + val.src[0] + "'>";
+	var divBoxCell = "<div class='box-cell'>" + divImg + "</div>";
+	var divLpImg = "<div class='lp-img box-table'>" + divBoxCell + "</div><div class='lp-img-list'>" + totalList + "<div class='clearfix'></div></div><div class='lp-info'><div class='li-left'>" + divInfo + divSubInfo + "</div><div class='li-right'>" + totalProductType + "</div></div>";
+	var divLpItem = "<div class='lp-item shadow'>" + divLpImg +"</div>";
+
+	$(".list-product").append(divLpItem);
 }
 
 function tabSelected(val,val2) {

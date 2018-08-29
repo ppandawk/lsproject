@@ -8,7 +8,7 @@
       position: absolute;
       background: rgba(66,122,85,.5);
       .title{
-        width: 75%;
+        width: 80%;
         float: left;
         color: #000000;
         padding: 0 5px;
@@ -17,12 +17,13 @@
         @include numofLine(3);
       }
       .type{
-        width: 25%;
+        width: 20%;
         float: right;
+        margin-top: 2px;
         text-align: right;
         img{
-          float: left;
-          width: 50%;
+          float: right;
+          width: 40%;
           padding: 2px;
         }
       }

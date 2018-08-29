@@ -1,7 +1,7 @@
 .nav-product {
     color: #ffffff;
     padding: 20px 0;
-    background: #174eb5;
+    background: #294381;
     margin: -40px auto 40px;
     .np-wrap {
         width: 1004px;
@@ -23,35 +23,15 @@
         border-right: 1px solid #fff;
         &:first-child {
             border-left: 1px solid #fff;
-        } // border-bottom: 2px solid transparent; 
+        }
         &:hover,
         &.actived {
-            color: #80d417; // border-bottom: 2px solid #203B29; 
+            color: #80d417;
         }
     }
 }
 
-// .list-product{
-// 	width: 100%;
-// 	padding: 5px 0px;
-// 	overflow: hidden;
-// 	.lp-item{
-// 	    width: 200px;
-// 	    height: 200px;
-// 	    float: left;
-// 	    position: relative;
-// 	    .li-detail{
-// 	    	line-height: 0;
-//     	    text-align: center;
-// 		    background-color: #f4f5f8;
-// 	    }
-// 		img{  
-// 			max-width: 200px;
-//     		max-height: 200px;
-// 		}
-// 	}
-// }
-.list-product-2 {
+.list-product {
     width: 100%;
     padding: 5px 0px;
     overflow: hidden;
@@ -62,7 +42,7 @@
         text-align: center;
         width: calc(25% - 20px);
         background-color: #f4f5f8;
-        border: 2px solid #427A55;
+        border: 2px solid #2ba139;
         .lp-img {
             padding: 5px;
             line-height: 0;
@@ -97,7 +77,7 @@
 	    		width: 70%;
 	    		float: left;
 	    		text-align: left;
-	    		padding-left: 5px;
+                padding-left: 5px;
 	    		.ll-info{
 	    			border-bottom: 1px solid black;
 					.lin-title{
@@ -108,24 +88,29 @@
 					}
 					.lin-name{
 						float: left;
+                        height: 45px;
 					    word-break: break-all;
-        				@include numofLine(3);
+        				@include numofLine(2);
 						width: calc(100% - 55px);
 					}
 					&:last-child{
 						border-bottom: none;
 					}
 					&.sub{
+                        padding-top: 5px;
 						.lin-title{
 							font-size: $font-size-xs;
 						}
+                        .lin-name{
+                            height: auto;
+                        }
 					}
 	    		}
 	    	}
 	    	.li-right{
 	    		width: 30%;
 	    		float: right;
-	    		text-align: right;
+                text-align: right;
 	    		padding-right: 5px;
 	    		img{
 	    			width: 45%;
