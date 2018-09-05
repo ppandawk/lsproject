@@ -115,6 +115,15 @@ var productItem = [
 		type: 'agi',
 		description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
 	},
+	{
+		id: 2,
+		name: 'test',
+		code: '0acs3',
+		src: ['assets/images/products/4.png','assets/images/products/5.png','assets/images/products/6.png'],
+		plasticType: ['pet','pvc','pp','ps'],
+		type: 'agi',
+		description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+	}
 	// ,
 	// {
 	// 	id: 2,
@@ -167,6 +176,7 @@ var productItem = [
 ]
 
 function productList(type,val) {
+
 	if (listProduct[0].children.length > 0) {
 		while (listProduct[0].firstChild) {
 		    listProduct[0].removeChild(listProduct[0].firstChild);
@@ -195,15 +205,18 @@ function productList(type,val) {
 	// screenSize();
 }
 
+var countProd = 0;
+var proListSrc = '';
+
 function createListProduct(val) {
 	var totalList = '';
 	var totalProductType = '';
-
+	countProd++;
 	// img list
 	for (var p = 0; p < val.src.length; p++) {
-		var divLLimg  = "<img src='" + val.src[p] + "'>";
+		var divLLimg  = "<img class='prod-list" + p + ""+countProd+"' src='" + val.src[p] + "'>";
 		var divLLCell = "<div class='box-cell'>" + divLLimg + "</div>";
-		var divLLitem = "<div class='lp-img box-table'>" + divLLCell + "</div>";
+		var divLLitem = "<div class='lp-img box-table' onmouseover='proListHover(this," + p + ",true,"+countProd+")' onmouseout='proListHover(this," + p + ",false,"+countProd+")'>" + divLLCell + "</div>";
 		totalList += divLLitem;
 	}
 
@@ -216,12 +229,25 @@ function createListProduct(val) {
 	var divInfo = "<div class='ll-info'><div class='lin-title'>ชื่อสินค้า</div><div class='lin-name'>" + val.name + "</div><div class='clearfix'></div></div>"
 	var divSubInfo = "<div class='ll-info sub'><div class='lin-title'>รหัสสินค้า</div><div class='lin-name'>" + val.code + "</div><div class='clearfix'></div></div>"
 
-	var divImg = "<img src='" + val.src[0] + "'>";
+	var divImg = "<img class='prod-main-img"+countProd+"' src='" + val.src[0] + "'>";
 	var divBoxCell = "<div class='box-cell'>" + divImg + "</div>";
 	var divLpImg = "<div class='lp-img box-table'>" + divBoxCell + "</div><div class='lp-img-list'>" + totalList + "<div class='clearfix'></div></div><div class='lp-info'><div class='li-left'>" + divInfo + divSubInfo + "</div><div class='li-right'>" + totalProductType + "</div></div>";
 	var divLpItem = "<div class='lp-item shadow' onclick='modalProduct(" + JSON.stringify(val) + ")'>" + divLpImg +"</div>";
-	// debugger;
 	$(".list-product").append(divLpItem);
+}
+
+
+function proListHover(val,key,bool,uni){
+	var mainImg = document.getElementsByClassName("prod-main-img" + uni)[0];
+	var isSelectedImg = document.getElementsByClassName("prod-list" + key + uni)[0];
+ 
+	if (bool){
+		proListSrc = mainImg.src;
+		mainImg.src = isSelectedImg.src;
+	} else {
+		mainImg.src = proListSrc;
+		proListSrc = '';
+	}
 }
 
 function modalProduct(val,key) {
@@ -239,11 +265,11 @@ function modalProduct(val,key) {
 	var cwMainImg,cwListImg = "";
 
 	if (val) {
-		cwMainImg = "<div class='box-table'><div class='box-cell'><img src='" + val.src[0] + "'></div></div>"
+		cwMainImg = "<div class='box-table'><div class='box-cell'><img class='prod-modal-main' src='" + val.src[0] + "'></div></div>"
 		$(".ci-wrap").append(cwMainImg);
 
 		for (var a = 0; a < val.src.length; a++) {
-			var divLLimg  = "<img src='" + val.src[a] + "'>";
+			var divLLimg  = "<img class='prod-modal-list"+a+"' onclick='isImgModal(this,"+a+")' src='" + val.src[a] + "'>";
 			var divLLCell = "<div class='box-cell'>" + divLLimg + "</div>";
 			var divLLitem = "<div class='box-table'>" + divLLCell + "</div>";
 			cwListImg += divLLitem;
@@ -265,6 +291,11 @@ function modalProduct(val,key) {
 		}
 	}
 
+}
+
+function isImgModal(val,key) {
+	var pmm = document.getElementsByClassName('prod-modal-main')[0];
+	pmm.src = val.src;
 }
 
 function tabSelected(val,val2) {
@@ -311,7 +342,7 @@ $(document).ready(function(){
 	    items:4,
 	    loop:true,
 	    dots:false,
-	    // autoplay:true,
-	    // autoplayTimeout:5000
+	    autoplay:true,
+	    autoplayTimeout:5000
 	})
 });
