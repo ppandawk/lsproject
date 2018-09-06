@@ -334,9 +334,9 @@ img {
         margin-bottom: 20px;
         background: #dddcdc;
         width: calc(100% - 10px);
-        &:last-child {
-            margin-bottom: 0;
-        }
+        // &:last-child {
+        //     margin-bottom: 0;
+        // }
         .cb-left {
             width: 50%;
             float: left;
