@@ -10,13 +10,13 @@
       .title{
         width: 80%;
         float: left;
-        height: 65px;
+        height: 45px;
         color: #000000;
         padding: 0 5px;
         font-size: 16px;
         line-height: 22px;
         word-wrap: break-word;
-        @include numofLine(3);
+        @include numofLine(2);
       }
       .type{
         width: 20%;
@@ -29,6 +29,9 @@
           padding: 2px;
         }
       }
+    }
+    img{
+      max-height: 600px;
     }
     .slide-footer{
       bottom: 0;

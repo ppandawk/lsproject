@@ -22,32 +22,6 @@ function setLang(val){
 	lang = window.localStorage.language;
 }
 
-var career = [
-	{
-		id: 1,
-		title: 'วิศวะ',
-		date: '20 ก.ค. - 20 ส.ค.',
-		year: 2018,
-		resp: 'responsibility',
-		specialist: ['การศึกษา: hello','ประสบการณ์: this','ทักษะ: is','อุปนิสัย: a']
-	},
-	{
-		id: 2,
-		title: 'hello',
-		date: '20 ก.ค. - 20 ส.ค.',
-		year: 2018,
-		resp: 'responsibility',
-		specialist: ['การศึกษา: hello','ประสบการณ์: this']
-	},
-	{
-		id: 3,
-		title: 'there',
-		date: '20 ก.ค. - 20 ส.ค.',
-		year: 2018,
-		specialist: ['การศึกษา: hello','ประสบการณ์: this','ทักษะ: is','อุปนิสัย: test']
-	}
-]
-
 // modal
 var body = document.getElementsByTagName("body");
 var mainModal = document.getElementsByClassName("cw-modal");
@@ -83,7 +57,6 @@ function isOpenSub(val) {
 }
 
 // Product
-
 var listProduct = document.getElementsByClassName('list-product');
 var listItem = document.getElementsByClassName('lp-item');
 if (listProduct.length != 0){
@@ -104,76 +77,6 @@ function screenSize() {
 		listItem[i].children[0].children[0].style.maxHeight = listWidth + 'px';
 	}
 }
-
-var productItem = [
-	{
-		id: 1,
-		name: 'test',
-		code: '0acs3',
-		src: ['assets/images/products/1.png','assets/images/products/2.png','assets/images/products/3.png'],
-		plasticType: ['pet','pvc','pp','ps'],
-		type: 'agi',
-		description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
-	},
-	{
-		id: 2,
-		name: 'test',
-		code: '0acs3',
-		src: ['assets/images/products/4.png','assets/images/products/5.png','assets/images/products/6.png'],
-		plasticType: ['pet','pvc','pp','ps'],
-		type: 'agi',
-		description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
-	}
-	// ,
-	// {
-	// 	id: 2,
-	// 	title: 'hello',
-	// 	src: 'assets/images/products/2.png',
-	// 	type: 'food'
-	// },
-	// {
-	// 	id: 3,
-	// 	title: 'there',
-	// 	src: 'assets/images/products/3.png',
-	// 	type: 'phamacies'
-	// },
-	// {
-	// 	id: 4,
-	// 	title: 'there',
-	// 	src: 'assets/images/products/4.png',
-	// 	type: 'phamacies'
-	// },
-	// {
-	// 	id: 5,
-	// 	title: 'there',
-	// 	src: 'assets/images/products/5.png',
-	// 	type: 'phamacies'
-	// },
-	// {
-	// 	id: 6,
-	// 	title: 'hello',
-	// 	src: 'assets/images/products/6.png',
-	// 	type: 'food'
-	// },
-	// {
-	// 	id: 7,
-	// 	title: 'test',
-	// 	src: 'assets/images/products/7.png',
-	// 	type: 'agi'
-	// },
-	// {
-	// 	id: 8,
-	// 	title: 'test',
-	// 	src: 'assets/images/products/8.png',
-	// 	type: 'agi'
-	// },
-	// {
-	// 	id: 9,
-	// 	title: 'test',
-	// 	src: 'assets/images/products/9.png',
-	// 	type: 'agi'
-	// }
-]
 
 function productList(type,val) {
 
@@ -226,12 +129,19 @@ function createListProduct(val) {
 	}
 
 	// set name and code
-	var divInfo = "<div class='ll-info'><div class='lin-title'>ชื่อสินค้า</div><div class='lin-name'>" + val.name + "</div><div class='clearfix'></div></div>"
-	var divSubInfo = "<div class='ll-info sub'><div class='lin-title'>รหัสสินค้า</div><div class='lin-name'>" + val.code + "</div><div class='clearfix'></div></div>"
+	//  // is old version
+	// var divInfo = "<div class='ll-info'><div class='lin-title'>ชื่อสินค้า</div><div class='lin-name'>" + val.name + "</div><div class='clearfix'></div></div>"
+	// var divSubInfo = "<div class='ll-info sub'><div class='lin-title'>รหัสสินค้า</div><div class='lin-name'>" + val.code + "</div><div class='clearfix'></div></div>"
+
+	var divInfoName = "<div class='li-info'><div class='lin-title'>ชื่อสินค้า</div><div class='lin-name'>" + val.name + "</div><div class='clearfix'></div></div>";
+	var divInfoCode = "<div class='lsi-wrap'><div class='lin-title sub'>รหัสสินค้า</div><div class='lin-name sub'>" + val.code + "</div><div class='clearfix'></div></div>";
+
+	var divSubInfoList = "<div class='li-sub-info'>" + divInfoCode + "<div class='lsi-wrap'>" + totalProductType + "</div><div class='clearfix'></div></div>";
 
 	var divImg = "<img class='prod-main-img"+countProd+"' src='" + val.src[0] + "'>";
 	var divBoxCell = "<div class='box-cell'>" + divImg + "</div>";
-	var divLpImg = "<div class='lp-img box-table'>" + divBoxCell + "</div><div class='lp-img-list'>" + totalList + "<div class='clearfix'></div></div><div class='lp-info'><div class='li-left'>" + divInfo + divSubInfo + "</div><div class='li-right'>" + totalProductType + "</div></div>";
+	// var divLpImg = "<div class='lp-img box-table'>" + divBoxCell + "</div><div class='lp-img-list'>" + totalList + "<div class='clearfix'></div></div><div class='lp-info'><div class='li-left'>" + divInfo + divSubInfo + "</div><div class='li-right'>" + totalProductType + "</div></div>";
+	var divLpImg = "<div class='lp-img box-table'>" + divBoxCell + "</div><div class='lp-img-list'>" + totalList + "<div class='clearfix'></div></div><div class='lp-info'>" + divInfoName + divSubInfoList + "</div>";
 	var divLpItem = "<div class='lp-item shadow' onclick='modalProduct(" + JSON.stringify(val) + ")'>" + divLpImg +"</div>";
 	$(".list-product").append(divLpItem);
 }
@@ -265,7 +175,7 @@ function modalProduct(val,key) {
 	var cwMainImg,cwListImg = "";
 
 	if (val) {
-		cwMainImg = "<div class='box-table'><div class='box-cell'><img class='prod-modal-main' src='" + val.src[0] + "'></div></div>"
+		cwMainImg = "<div class='ci-free-space'><div class='box-table'><div class='box-cell'><img class='prod-modal-main' src='" + val.src[0] + "'></div></div></div>"
 		$(".ci-wrap").append(cwMainImg);
 
 		for (var a = 0; a < val.src.length; a++) {
