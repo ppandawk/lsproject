@@ -197,7 +197,7 @@ img {
 .content {
     margin: 0;
     min-height: 90%;
-    background: #e5e5e5;
+    background: #ffffff;
     padding-bottom: 45px;
 }
 
@@ -210,7 +210,7 @@ img {
     }
     &.header,
     &.footer {
-        background: #d0d2d0;
+        background: #e4e4e4;
     }
     &.content {
         background: #c9c9c9;
@@ -222,16 +222,19 @@ img {
         &.full {
             overflow: unset;
         }
+        &.org {
+            margin: 70px auto 50px;
+        }
     }
     .box-title {
-        margin: 30px auto;
+        margin: 50px auto;
         font-weight: bold;
         font-size: $font-size-xxxl;
         &.bt-bold {
             font-weight: bold;
         }
         &.bt-line {
-            padding-bottom: 20px;
+            padding-bottom: 30px;
             border-bottom: 2px solid black;
         }
         &.bt-half {
@@ -344,7 +347,7 @@ img {
         padding: 10px;
         position: relative;
         margin-bottom: 20px;
-        background: #dddcdc;
+        background: #efefef;
         width: calc(100% - 10px);
         .cb-left {
             width: 50%;
@@ -525,7 +528,7 @@ img {
     }
     .box-iow-list {
         width: 100%;
-        margin: 30px auto 20px;
+        margin: 50px auto 20px;
         text-align: center;
         .bi-frame {
             width: 18%;
@@ -555,6 +558,10 @@ img {
     }
 }
 
+// about us
+.about-img{
+    margin:85px 0 50px;
+}
 
 
 
