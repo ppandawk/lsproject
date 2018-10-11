@@ -1,1 +1,2 @@
 AddType application/x-httpd-php .htm .html
+php_value auto_prepend_file "src/header.html"
