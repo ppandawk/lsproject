@@ -7,7 +7,7 @@
             width: 100%;
             padding: 5px;
             position: absolute;
-            background: rgba(66, 122, 85, .5);
+            background: rgba(255,255,255, .5);
             .title {
                 width: 80%;
                 float: left;
@@ -44,6 +44,7 @@
                 img {
                     max-width: 100%;
                     max-height: 200px;
+                    min-height: 200px;
                 }
             }
         }
@@ -52,7 +53,7 @@
             width: 100%;
             padding: 5px;
             position: absolute;
-            background: rgba(66, 122, 85, .5);
+            background: rgba(255,255,255, .5);
             .pic {
                 width: 70%;
             }
@@ -62,6 +63,12 @@
         top: -45px;
         position: relative;
     }
+}
+
+.idc-slide{
+    position: relative;
+    top: -15px;
+    z-index: 0;
 }
 
 .owl-two {

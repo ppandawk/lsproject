@@ -15,6 +15,9 @@ function onInit() {
     // debugger;
     setLang();
     // contentLang();
+    if (career != undefined || career != null) { jobs(career) }
+    // debugger;
+
 }
 var executed = false;
 // set language
@@ -23,7 +26,7 @@ function setLang(val) {
     lang = window.localStorage.language;
     // var tt = document.getElementsByTagName('script');
     // if (lang == "TH") {
-    // 	tt[3].src = ""
+    //  tt[3].src = ""
     // }else{
 
     // }
@@ -33,7 +36,7 @@ function setLang(val) {
     // location.reload(true);
     // if (executed) {
     //     // executed = true;
-    	// location.reload(true);
+    // location.reload(true);
     // }
     // console.log(lang);
 }
@@ -46,8 +49,14 @@ function isModal(val, key) {
     var position = document.getElementsByClassName("position");
     var exp = document.getElementsByClassName("expired");
     var resp = document.getElementsByClassName("responsibility");
-    var special = document.getElementsByClassName("specialist");
-    // var educa = document.getElementsByClassName("education");
+    var sow = document.getElementsByClassName("scopeOfWork");
+
+    var sex = document.getElementsByClassName("sex");
+    var edu = document.getElementsByClassName("edu");
+    var age = document.getElementsByClassName("age");
+    var expr = document.getElementsByClassName("expr");
+    var special = document.getElementsByClassName("speciallist");
+
     body[0].className = body[0].className == '' ? 'freeze' : '';
     mainModal[0].style.display = mainModal[0].style.display == '' || mainModal[0].style.display == 'none' ? 'block' : 'none';
 
@@ -55,17 +64,22 @@ function isModal(val, key) {
     exp[0].innerHTML = career[key].date + " " + career[key].year;
     // clear ul before adding
     resp[0].innerHTML = career[key].resp == undefined ? '-' : career[key].resp;
-    if (special[0].children.length > 0) {
-        while (special[0].firstChild) {
-            special[0].removeChild(special[0].firstChild);
-        }
+    sow[0].innerHTML = career[key].sow == undefined ? '-' : career[key].sow;
+    sex[0].innerHTML = career[key].sex == undefined ? '-' : career[key].sex;
+    edu[0].innerHTML = career[key].edu == undefined ? '-' : career[key].edu;
+    age[0].innerHTML = career[key].age == undefined ? '-' : career[key].age;
+    expr[0].innerHTML = career[key].expr == undefined ? '-' : career[key].expr;
+    special[0].innerHTML = career[key].specialist == undefined ? '-' : career[key].specialist;
+}
+
+function jobs(val) {
+    for (var i = 0; i < val.length; i++) {
+        var left = "<div class='cb-left'><div class='cb-title'><strong>ตำแหน่ง: " + val[i].title + "</strong></div><div class='cb-info'><span>การศึกษา: " + val[i].edu + "</span><br><span>ประสบการณ์: " + val[i].expr + "</span></div><div class='cb-foot'><a href='#'>(ดูรายละเอียดเพิ่มเติม)</a></div></div>";
+        var right = "<div class='cb-right'><div class='expired-box'>วันที่ประกาศ-หมดเขต (" + val[i].date + " " + val[i].year + ")</div><div class='cb-foot'><button class='btn'>สมัครเลย</button></div></div>";
+        var mainDiv = "<div class='cw-box shadow' onclick='isModal(true," + i + ")'>" + left + right + "<div class='clearfix'></div></div>";
+        $(".career-wrap").append(mainDiv);
     }
-    // it for special
-    for (var i = 0; i < career[key].specialist.length; i++) {
-        var li = document.createElement('li');
-        li.innerHTML = career[key].specialist[i];
-        special[0].appendChild(li);
-    }
+
 }
 
 // open sub menu
@@ -262,7 +276,7 @@ $(document).ready(function() {
         items: 1,
         loop: true,
         autoplay: true,
-        autoplayTimeout: 5000,
+        autoplayTimeout: 12000,
         autoplayHoverPause: true
     })
     $('.owl-two').owlCarousel({
